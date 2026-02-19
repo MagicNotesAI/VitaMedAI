@@ -1,4 +1,5 @@
-import { Stethoscope, Linkedin, Twitter, Facebook, Instagram } from 'lucide-react';
+import { Linkedin, Twitter, Facebook, Instagram } from 'lucide-react';
+import logo from '@/assets/Vita-med_logo.png';
 
 export function FooterBanner() {
   return (
@@ -12,10 +13,7 @@ export function FooterBanner() {
           {/* Logo and Description */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 bg-blue-500 rounded-lg flex items-center justify-center">
-                <Stethoscope className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-xl font-bold text-white">MED-A</span>
+              <img src={logo} alt="VitaMed" className="h-14 w-auto sm:h-16 brightness-0 invert" />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">
               Streamlining patient care, improving patient outcomes, and facilitating communication between clinicians and doctors with automation and AI.
