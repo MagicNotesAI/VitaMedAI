@@ -5,6 +5,7 @@ import { Team } from '../features/team/pages/TeamPage';
 import { HowItWorks } from '../features/how-it-works/pages/HowItWorksPage';
 import { Service } from '../features/service/pages/ServicePage';
 
+const base = import.meta.env.BASE_URL;
 export const router = createBrowserRouter([
   {
     path: '/',
@@ -22,4 +23,4 @@ export const router = createBrowserRouter([
     path: '/service',
     element: <MainLayout><Service /></MainLayout>,
   },
-]);
+], { basename: base.replace(/\/$/, '') });

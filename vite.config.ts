@@ -4,6 +4,8 @@
   import path from 'path';
 
   export default defineConfig({
+    // Required for GitHub Pages when repo is not username.github.io
+    base: '/VitaMedAI/',
     plugins: [react()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
