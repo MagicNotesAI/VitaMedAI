@@ -1,0 +1,118 @@
+import { Stethoscope, Menu, X, ChevronDown } from 'lucide-react';
+import { useState } from 'react';
+import { Link } from 'react-router';
+
+export function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
+
+  return (
+    <header className="border-b border-gray-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-4">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2">
+            <div className="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center">
+              <Stethoscope className="w-5 h-5 text-white" />
+            </div>
+            <span className="text-xl font-bold text-blue-600">MED-A</span>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-8">
+            <Link to="/" className="text-gray-700 hover:text-gray-900 text-sm font-medium">
+              Home
+            </Link>
+            
+            {/* About Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setAboutDropdownOpen(true)}
+              onMouseLeave={() => setAboutDropdownOpen(false)}
+            >
+              <button className="text-gray-700 hover:text-gray-900 text-sm font-medium flex items-center gap-1">
+                About
+                <ChevronDown className="w-4 h-4" />
+              </button>
+              
+              {/* Dropdown Menu */}
+              {aboutDropdownOpen && (
+                <div className="absolute top-full left-0 pt-2 z-50">
+                  <div className="w-48 bg-white rounded-lg shadow-lg border border-gray-100 py-2">
+                    <Link
+                      to="/team"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                    >
+                      Team
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
+            
+            <Link to="/service" className="text-gray-700 hover:text-gray-900 text-sm font-medium">
+              Service
+            </Link>
+            <Link to="/how-it-works" className="text-gray-700 hover:text-gray-900 text-sm font-medium">
+              How it works
+            </Link>
+            <button className="bg-blue-600 text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-700 transition-colors">
+              Request Access
+            </button>
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="lg:hidden p-2 text-gray-700 hover:text-gray-900"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {mobileMenuOpen && (
+          <nav className="lg:hidden mt-4 pb-4 flex flex-col gap-4 border-t border-gray-100 pt-4">
+            <Link to="/" className="text-gray-700 hover:text-gray-900 text-sm font-medium py-2">
+              Home
+            </Link>
+            <div className="flex flex-col">
+              <button 
+                onClick={() => setAboutDropdownOpen(!aboutDropdownOpen)}
+                className="text-gray-700 hover:text-gray-900 text-sm font-medium py-2 flex items-center justify-between"
+              >
+                About
+                <ChevronDown className={`w-4 h-4 transition-transform ${aboutDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {aboutDropdownOpen && (
+                <div className="pl-4 mt-2">
+                  <Link 
+                    to="/team" 
+                    className="text-gray-600 hover:text-gray-900 text-sm font-medium py-2 block"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Team
+                  </Link>
+                </div>
+              )}
+            </div>
+            <Link to="/service" className="text-gray-700 hover:text-gray-900 text-sm font-medium py-2">
+              Service
+            </Link>
+            <Link to="/how-it-works" className="text-gray-700 hover:text-gray-900 text-sm font-medium py-2">
+              How it works
+            </Link>
+            <button className="bg-blue-600 text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-700 transition-colors w-full">
+              Request Access
+            </button>
+          </nav>
+        )}
+      </div>
+    </header>
+  );
+}
