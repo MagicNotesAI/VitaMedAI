@@ -14,17 +14,17 @@ export function FooterBanner() {
             <div className="flex items-center gap-3 mb-4">
               <img
                 src={logo}
-                alt="VitaMed AI"
+                alt="Vitamed AI"
                 className="w-10 h-10 rounded-xl object-cover border border-white/10"
               />
               <div>
-                <div className="text-white font-bold text-lg leading-tight">VitaMed AI</div>
+                <div className="text-white font-bold text-lg leading-tight">Vitamed AI</div>
                 <div className="text-gray-400 text-sm">Intelligence at the point of care</div>
               </div>
             </div>
 
             <p className="text-gray-400 text-sm leading-relaxed max-w-md">
-              Introducing VitaMed AI, a medical revolution to streamline patient care, improve patient outcomes,
+              Introducing Vitamed AI, a medical revolution to streamline patient care, improve patient outcomes,
               and facilitate communication between patients and doctors using automation and cutting edge AI
               technology.
             </p>
@@ -33,7 +33,7 @@ export function FooterBanner() {
             <div className="mt-5 space-y-3">
               <a
                 href="mailto:hello@vitamed.ai"
-                className="inline-flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors"
+                className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors"
               >
                 <Mail className="w-4 h-4" />
                 hello@vitamed.ai
@@ -41,20 +41,20 @@ export function FooterBanner() {
 
               <a
                 href="tel:+10000000000"
-                className="inline-flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors"
+                className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors"
               >
                 <Phone className="w-4 h-4" />
                 +1 (000) 000 0000
               </a>
 
-              <div className="inline-flex items-start gap-2 text-sm text-gray-300">
+              <div className="flex items-start gap-2 text-sm text-gray-300">
                 <MapPin className="w-4 h-4 mt-0.5" />
                 <span>Amherst, MA</span>
               </div>
             </div>
           </div>
 
-          {/* Links */}
+          {/* Company Links */}
           <div>
             <h4 className="text-white font-semibold mb-4">Company</h4>
             <ul className="space-y-3 text-sm">
@@ -81,7 +81,7 @@ export function FooterBanner() {
             </ul>
           </div>
 
-          {/* Legal */}
+          {/* Legal Links */}
           <div>
             <h4 className="text-white font-semibold mb-4">Legal</h4>
             <ul className="space-y-3 text-sm">
@@ -136,20 +136,29 @@ export function FooterBanner() {
               Follow us for product updates, private beta announcements, and new feature releases.
             </p>
 
-            {/* Extra contact CTA */}
             <a
               href="/contact"
-              className="mt-5 inline-flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 px-4 py-2 text-sm font-semibold text-gray-200 hover:text-white hover:bg-white/10 transition-colors w-full"
+              className="mt-5 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 px-4 py-2 text-sm font-semibold text-gray-200 hover:text-white hover:bg-white/10 transition-colors w-full"
             >
               Contact our team
             </a>
           </div>
         </div>
 
+        {/* Bottom bar */}
         <div className="pt-8 border-t border-gray-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           <p className="text-gray-500 text-xs">
-            © {new Date().getFullYear()} VitaMed AI. All rights reserved.
+            © {new Date().getFullYear()} Vitamed AI. All rights reserved.
           </p>
+          <div className="flex items-center gap-4">
+            <a href="/privacy-policy" className="text-gray-600 text-xs hover:text-gray-400 transition-colors">
+              Privacy Policy
+            </a>
+            <span className="text-gray-700 text-xs">·</span>
+            <a href="/terms" className="text-gray-600 text-xs hover:text-gray-400 transition-colors">
+              Terms & Conditions
+            </a>
+          </div>
           <p className="text-gray-600 text-xs">
             Built for clinicians and patients with privacy first design.
           </p>

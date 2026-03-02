@@ -3,6 +3,9 @@ import { useState } from 'react'
 import { Link } from 'react-router'
 import logo from '../assets/logo.jpg'
 
+const REQUEST_ACCESS_FORM_URL =
+  'https://wtf-forms-1-xe5g.onrender.com/98467255-27d7-4957-b40b-e8ffe259121a'
+
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false)
@@ -48,13 +51,23 @@ export function Header() {
             <Link to="/service" className="text-gray-700 hover:text-gray-900 text-sm font-medium">
               Service
             </Link>
+
             <Link to="/how-it-works" className="text-gray-700 hover:text-gray-900 text-sm font-medium">
               How it works
             </Link>
 
-            <button className="bg-blue-600 text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-700 transition-colors">
+            <Link to="/contact" className="text-gray-700 hover:text-gray-900 text-sm font-medium">
+              Contact Us
+            </Link>
+
+            <a
+              href={REQUEST_ACCESS_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-blue-600 text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-700 transition-colors"
+            >
               Request Access
-            </button>
+            </a>
           </nav>
 
           <button
@@ -68,7 +81,11 @@ export function Header() {
 
         {mobileMenuOpen && (
           <nav className="lg:hidden mt-4 pb-4 flex flex-col gap-4 border-t border-gray-100 pt-4">
-            <Link to="/" className="text-gray-700 hover:text-gray-900 text-sm font-medium py-2">
+            <Link
+              to="/"
+              className="text-gray-700 hover:text-gray-900 text-sm font-medium py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
               Home
             </Link>
 
@@ -94,16 +111,39 @@ export function Header() {
               )}
             </div>
 
-            <Link to="/service" className="text-gray-700 hover:text-gray-900 text-sm font-medium py-2">
+            <Link
+              to="/service"
+              className="text-gray-700 hover:text-gray-900 text-sm font-medium py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
               Service
             </Link>
-            <Link to="/how-it-works" className="text-gray-700 hover:text-gray-900 text-sm font-medium py-2">
+
+            <Link
+              to="/how-it-works"
+              className="text-gray-700 hover:text-gray-900 text-sm font-medium py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
               How it works
             </Link>
 
-            <button className="bg-blue-600 text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-700 transition-colors w-full">
+            <Link
+              to="/contact"
+              className="text-gray-700 hover:text-gray-900 text-sm font-medium py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Contact Us
+            </Link>
+
+            <a
+              href={REQUEST_ACCESS_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-blue-600 text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-700 transition-colors w-full text-center"
+              onClick={() => setMobileMenuOpen(false)}
+            >
               Request Access
-            </button>
+            </a>
           </nav>
         )}
       </div>

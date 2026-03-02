@@ -1,7 +1,6 @@
 import abstractBg from 'figma:asset/29fe9bf4fe8d7bc645e152c63d7bfc471c8a8cc4.png'
 
-const BETA_FORM_URL =
-  'https://docs.google.com/forms/d/e/1FAIpQLScDYLYAHGMVcXzvpFV5A5m1rxIWIv9v6ZVGT6C5kxjpJ77W8w/viewform'
+const BETA_FORM_URL = 'https://wtf-forms-1-xe5g.onrender.com/98467255-27d7-4957-b40b-e8ffe259121a'
 
 export function BetaAccessSection() {
   return (

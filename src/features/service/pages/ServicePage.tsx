@@ -3,6 +3,10 @@ import { ArrowRight, Check, Database, Brain, Shield } from 'lucide-react';
 import { FooterBanner } from '../../../components/FooterBanner';
 
 export function Service() {
+  const handleRequestAccess = () => {
+    window.open('https://wtf-forms-1-xe5g.onrender.com/98467255-27d7-4957-b40b-e8ffe259121a', '_blank');
+  };
+
   return (
     <div className="bg-white">
       {/* Hero Section */}
@@ -18,9 +22,9 @@ export function Service() {
               A Structured Control Layer for Personal Health Data
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Med-A aggregates fragmented medical records, normalizes unstructured clinical data, and enables controlled distribution to providers through a unified interface.
+              Vitamed Ai aggregates fragmented medical records, normalizes unstructured clinical data, and enables controlled distribution to providers through a unified interface.
             </p>
-            <button className="flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-colors group">
+            <button onClick={handleRequestAccess} className="flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-colors group">
               <span>Request Early Access</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
@@ -366,7 +370,7 @@ export function Service() {
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Maintains Strict Privacy Boundaries</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Zero-knowledge architecture. Med-A cannot decrypt patient data. Access requires explicit user permission with full audit logging.
+                    Zero-knowledge architecture. Vitamed Ai cannot decrypt patient data. Access requires explicit user permission with full audit logging.
                   </p>
                 </div>
               </div>
@@ -422,7 +426,7 @@ export function Service() {
                   <div>
                     <div className="font-semibold text-gray-900 mb-1">No Secondary Monetization</div>
                     <div className="text-gray-600">
-                      Med-A does not sell patient data. No third-party analytics. No advertising partners. Revenue from subscription fees only.
+                      Vitamed Ai does not sell patient data. No third-party analytics. No advertising partners. Revenue from subscription fees only.
                     </div>
                   </div>
                 </div>
@@ -466,8 +470,8 @@ export function Service() {
                     SOC 2 Type II • HIPAA • HITRUST Certified
                   </div>
                 </div>
-                <button className="flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-colors group">
-                  <span>Request Security Documentation</span>
+                <button onClick={handleRequestAccess} className="flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-colors group">
+                  <span>Request Access </span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
