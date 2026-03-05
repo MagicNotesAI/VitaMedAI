@@ -7,8 +7,7 @@ export function HeroSection() {
     'https://images.unsplash.com/photo-1758691461884-ff702418afde?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZWRpY2FsJTIwcHJvZmVzc2lvbmFsJTIwcG9ydHJhaXR8ZW58MXx8fHwxNzcwNjY5MjgwfDA&ixlib=rb-4.1.0&q=80&w=1080',
   ]
 
-  const PRIVATE_BETA_FORM_URL =
-    'https://wtf-forms-1-xe5g.onrender.com/98467255-27d7-4957-b40b-e8ffe259121a'
+  const PRIVATE_BETA_FORM_URL ='https://wtf-forms.vercel.app/2f119830-7aa0-4f80-b678-8df707b999ba'
 
   return (
     <section className="max-w-7xl mx-auto px-8 py-20">

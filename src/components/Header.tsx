@@ -5,7 +5,7 @@ import logo from '../assets/logo.png'
 import logoText from '../assets/write1.png'
 
 const REQUEST_ACCESS_FORM_URL =
-  'https://wtf-forms-1-xe5g.onrender.com/98467255-27d7-4957-b40b-e8ffe259121a'
+  'https://wtf-forms.vercel.app/2f119830-7aa0-4f80-b678-8df707b999ba'
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)

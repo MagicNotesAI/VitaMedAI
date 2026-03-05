@@ -5,17 +5,17 @@ const sections = [
   {
     id: '01',
     title: 'Agreement to Terms',
-    content: `By accessing and using Vitamed Ai services, you agree to be bound by these Terms and Conditions. If you do not agree to these terms, please discontinue use of our services immediately.`
+    content: `By accessing and using Vitamed AI services, you agree to be bound by these Terms and Conditions. If you do not agree to these terms, please discontinue use of our services immediately.`
   },
   {
     id: '02',
     title: 'Description of Service',
-    content: `Vitamed Ai provides tools to help users organize and share health-related information and support communication with care teams. Our platform enables structured aggregation, organization, and controlled distribution of personal health records.`
+    content: `Vitamed AI provides tools to help users organize and share health-related information and support communication with care teams. Our platform enables structured aggregation, organization, and controlled distribution of personal health records.`
   },
   {
     id: '03',
     title: 'User Responsibilities',
-    content: `By using Vitamed Ai, you agree to the following obligations:`,
+    content: `By using Vitamed AI, you agree to the following obligations:`,
     list: [
       'Provide accurate and complete information when creating and maintaining your account',
       'Maintain the security of your account credentials and notify us of any unauthorized access',
@@ -26,18 +26,18 @@ const sections = [
   {
     id: '04',
     title: 'Medical Disclaimer',
-    content: `Vitamed Ai does not provide medical diagnosis, treatment recommendations, or clinical advice. The platform is not a substitute for professional medical care. Users should always consult a qualified and licensed healthcare provider for any health-related decisions. Vitamed Ai assumes no responsibility for actions taken based on information organized within the platform.`,
+    content: `Vitamed AI does not provide medical diagnosis, treatment recommendations, or clinical advice. The platform is not a substitute for professional medical care. Users should always consult a qualified and licensed healthcare provider for any health-related decisions. Vitamed Ai assumes no responsibility for actions taken based on information organized within the platform.`,
     highlight: true
   },
   {
     id: '05',
     title: 'Intellectual Property',
-    content: `All content, features, and functionality available through the Vitamed Ai platform — including but not limited to software, text, graphics, logos, and interface design — are the exclusive property of Vitamed Ai and are protected by applicable intellectual property, copyright, and trademark laws.`
+    content: `All content, features, and functionality available through the Vitamed AI platform — including but not limited to software, text, graphics, logos, and interface design — are the exclusive property of Vitamed Ai and are protected by applicable intellectual property, copyright, and trademark laws.`
   },
   {
     id: '06',
     title: 'Limitation of Liability',
-    content: `To the maximum extent permitted by applicable law, Vitamed Ai shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use the service, including but not limited to loss of data, business interruption, or any other commercial damages or losses.`
+    content: `To the maximum extent permitted by applicable law, Vitamed AI shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use the service, including but not limited to loss of data, business interruption, or any other commercial damages or losses.`
   },
   {
     id: '07',

@@ -4,7 +4,7 @@ import { FooterBanner } from '../../../FooterBanner';
 
 export function Service() {
   const handleRequestAccess = () => {
-    window.open('https://wtf-forms-1-xe5g.onrender.com/98467255-27d7-4957-b40b-e8ffe259121a', '_blank');
+    window.open('https://wtf-forms.vercel.app/2f119830-7aa0-4f80-b678-8df707b999ba', '_blank');
   };
 
   return (
