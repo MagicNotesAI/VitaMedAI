@@ -1,9 +1,9 @@
-import { ImageWithFallback } from '../../../components/figma/ImageWithFallback'
-import { FooterBanner } from '../../../components/FooterBanner'
+import { ImageWithFallback } from '../../../figma/ImageWithFallback'
+import { FooterBanner } from '../../../FooterBanner'
 import { Linkedin } from 'lucide-react'
-import janu from '../../../assets/janu.png'
-import leejoe from '../../../assets/leejoe.png'
-import norinne from '../../../assets/norinne.png'
+import janu from '../../../../assets/janu.png'
+import leejoe from '../../../../assets/leejoe.png'
+import norinne from '../../../../assets/norinne.png'
 
 const teamMembers = [
   {

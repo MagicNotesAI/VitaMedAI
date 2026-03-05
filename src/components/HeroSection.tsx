@@ -1,5 +1,4 @@
 import { ArrowRight, Search } from 'lucide-react'
-import DemoGate from './DemoGate/demogate'
 
 export function HeroSection() {
   const avatars = [
@@ -48,8 +47,6 @@ export function HeroSection() {
               Join the Private Beta
               <ArrowRight className="w-4 h-4" />
             </a>
-
-            <DemoGate buttonText="Watch Demo" />
           </div>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">

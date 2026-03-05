@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { ArrowRight, Check, Database, Brain, Shield } from 'lucide-react';
-import { FooterBanner } from '../../../components/FooterBanner';
+import { FooterBanner } from '../../../FooterBanner';
 
 export function Service() {
   const handleRequestAccess = () => {

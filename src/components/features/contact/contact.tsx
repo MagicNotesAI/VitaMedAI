@@ -1,6 +1,6 @@
 // src/features/contact/contact.tsx
 import { Calendar, Mail, ArrowRight } from 'lucide-react'
-import contactImg from '../../assets/contact.png'
+import contactImg from '../../../assets/contact.png'
 
 export default function ContactPage() {
   return (

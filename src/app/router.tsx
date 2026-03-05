@@ -1,12 +1,12 @@
-import { createBrowserRouter } from 'react-router'
+import { createBrowserRouter } from 'react-router-dom'
 import { MainLayout } from '../layouts/MainLayout'
-import { Home } from '../features/home/pages/HomePage'
-import { Team } from '../features/team/pages/TeamPage'
-import { HowItWorks } from '../features/how-it-works/pages/HowItWorksPage'
-import { Service } from '../features/service/pages/ServicePage'
-import ContactPage from '../features/contact/contact'
-import { PrivacyPolicy } from '../features/privacy/pp'
-import { TermsAndConditions } from '../features/privacy/term'
+import { Home } from '../components/features/home/pages/HomePage'
+import { Team } from '../components/features/team/pages/TeamPage'
+import { HowItWorks } from '../components/features/how-it-works/pages/HowItWorksPage'
+import { Service } from '../components/features/service/pages/ServicePage'
+import ContactPage from '../components/features/contact/contact'
+import { PrivacyPolicy } from '../components/features/privacy/pp'
+import { TermsAndConditions } from '../components/features/privacy/term'
 
 export const router = createBrowserRouter([
   {

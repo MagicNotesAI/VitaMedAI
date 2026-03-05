@@ -1,7 +1,8 @@
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { useState } from 'react'
 import { Link } from 'react-router'
-import logo from '../assets/logo.jpg'
+import logo from '../assets/logo.png'
+import logoText from '../assets/write1.png'
 
 const REQUEST_ACCESS_FORM_URL =
   'https://wtf-forms-1-xe5g.onrender.com/98467255-27d7-4957-b40b-e8ffe259121a'
@@ -14,9 +15,9 @@ export function Header() {
     <header className="border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="VitaMed AI" className="w-9 h-9 rounded-lg object-contain" />
-            <span className="text-xl font-bold text-blue-600">VitaMed AI</span>
+          <Link to="/" className="flex items-center gap-2 mr-auto">
+            <img src={logo} alt="VitaMed AI" className="w-14 h-14 rounded-lg object-contain" />
+            <img src={logoText} alt="VitaMed AI" className="h-10 w-auto object-contain" />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-8">
