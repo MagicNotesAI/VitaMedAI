@@ -1,5 +1,5 @@
-// src/components/FooterBanner.tsx
 import { Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import logo from '../assets/logo.jpg'
 
 export function FooterBanner() {
@@ -56,24 +56,24 @@ export function FooterBanner() {
             <h4 className="text-white font-semibold mb-4">Company</h4>
             <ul className="space-y-3 text-sm">
               <li>
-                <a href="/" className="text-gray-400 hover:text-white transition-colors">
+                <Link to="/" className="text-gray-400 hover:text-white transition-colors">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/service" className="text-gray-400 hover:text-white transition-colors">
+                <Link to="/service" className="text-gray-400 hover:text-white transition-colors">
                   Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/how-it-works" className="text-gray-400 hover:text-white transition-colors">
+                <Link to="/how-it-works" className="text-gray-400 hover:text-white transition-colors">
                   How it works
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/contact" className="text-gray-400 hover:text-white transition-colors">
+                <Link to="/contact" className="text-gray-400 hover:text-white transition-colors">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -82,14 +82,14 @@ export function FooterBanner() {
             <h4 className="text-white font-semibold mb-4">Legal</h4>
             <ul className="space-y-3 text-sm">
               <li>
-                <a href="/privacy-policy" className="text-gray-400 hover:text-white transition-colors">
+                <Link to="/privacy-policy" className="text-gray-400 hover:text-white transition-colors">
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/terms" className="text-gray-400 hover:text-white transition-colors">
+                <Link to="/terms" className="text-gray-400 hover:text-white transition-colors">
                   Terms & Conditions
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -120,12 +120,12 @@ export function FooterBanner() {
               Follow us for product updates, private beta announcements, and new feature releases.
             </p>
 
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="mt-5 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 px-4 py-2 text-sm font-semibold text-gray-200 hover:text-white hover:bg-white/10 transition-colors w-full"
             >
               Contact our team
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -134,13 +134,13 @@ export function FooterBanner() {
             © {new Date().getFullYear()} Vitamed AI. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <a href="/privacy-policy" className="text-gray-600 text-xs hover:text-gray-400 transition-colors">
+            <Link to="/privacy-policy" className="text-gray-600 text-xs hover:text-gray-400 transition-colors">
               Privacy Policy
-            </a>
+            </Link>
             <span className="text-gray-700 text-xs">·</span>
-            <a href="/terms" className="text-gray-600 text-xs hover:text-gray-400 transition-colors">
+            <Link to="/terms" className="text-gray-600 text-xs hover:text-gray-400 transition-colors">
               Terms & Conditions
-            </a>
+            </Link>
           </div>
           <p className="text-gray-600 text-xs">Built for clinicians and patients with privacy first design.</p>
         </div>
