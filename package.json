@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "homepage": "https://yourdomain.com",
+  "homepage": "https://vitamedai.com",
   "dependencies": {
     "cors": "^2.8.6",
     "express": "^5.2.1",
