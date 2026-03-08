@@ -1,12 +1,11 @@
 import { Quote } from 'lucide-react'
-
+import pp from '../assets/unnamed-1.png'
 const testimonials = [
   {
     name: 'Dr. Shalini Sethi',
     role: 'Pediatrician',
     hospital: '',
-    image:
-      'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGRvY3RvciUyMHBvcnRyYWl0fGVufDF8fHx8MTc3MDY3NTgxNXww&ixlib=rb-4.1.0&q=80&w=1080',
+    image: pp,
     quote:
       'As a physician, I have been extremely impressed with VitaMed AI and the thoughtful design behind its AI-based EMR. The platform is incredibly streamlined and intuitive, making documentation faster and significantly reducing administrative burden in one\'s daily workflow. Its unique and user-friendly features truly set it apart from traditional EMR systems. I strongly encourage clinics looking to enhance efficiency and modernize their practice to explore what VitaMed AI has to offer.',
   },
