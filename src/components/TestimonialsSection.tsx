@@ -1,5 +1,6 @@
 import { Quote } from 'lucide-react'
 import pp from '../assets/unnamed-1.png'
+import lee from '../assets/leejoe.png'
 
 const testimonials = [
   {
@@ -14,8 +15,7 @@ const testimonials = [
     name: 'Dr. Pallickal',
     role: 'Pulmonary Physician',
     hospital: 'Foothill Pulmonary Clinic, Pasadena, CA',
-    image:
-      'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkb2N0b3IlMjBtYWxlJTIwcG9ydHJhaXR8ZW58MXx8fHwxNzQwNTg2MDAwfDA&ixlib=rb-4.1.0&q=80&w=1080',
+    image:lee,  
     quote:
       'During busy shifts, VitaMed AI keeps documentation from piling up. The summaries are clear, and I can quickly review and sign notes without feeling like I am rewriting everything from scratch.',
   },
