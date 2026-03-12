@@ -1,5 +1,6 @@
 import { Quote } from 'lucide-react'
 import pp from '../assets/unnamed-1.png'
+
 const testimonials = [
   {
     name: 'Dr. Shalini Sethi',
@@ -7,25 +8,25 @@ const testimonials = [
     hospital: '',
     image: pp,
     quote:
-      'As a physician, I have been extremely impressed with VitaMed AI and the thoughtful design behind its AI-based EMR. The platform is incredibly streamlined and intuitive, making documentation faster and significantly reducing administrative burden in one\'s daily workflow. Its unique and user-friendly features truly set it apart from traditional EMR systems. I strongly encourage clinics looking to enhance efficiency and modernize their practice to explore what VitaMed AI has to offer.',
+      'As a physician, I have been extremely impressed with VitaMed AI and the thoughtful design behind its AI-based EMR. The platform is streamlined and intuitive, making documentation faster and significantly reducing the administrative burden of daily workflows. Its user-friendly features truly set it apart from traditional EMR systems. I strongly encourage clinics looking to enhance efficiency and modernize their practice to explore what VitaMed AI has to offer.',
   },
   {
-    name: 'Dr. Michael Chen',
-    role: 'Emergency Medicine Physician',
-    hospital: 'Regional Trauma Center',
+    name: 'Dr. Pallickal',
+    role: 'Pulmonary Physician',
+    hospital: 'Foothill Pulmonary Clinic, Pasadena, CA',
     image:
       'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkb2N0b3IlMjBtYWxlJTIwcG9ydHJhaXR8ZW58MXx8fHwxNzQwNTg2MDAwfDA&ixlib=rb-4.1.0&q=80&w=1080',
     quote:
-      'During busy shifts, VitaMed AI keeps documentation from piling up. The summaries are clear, and I can quickly review and sign without feeling like I am rewriting everything from scratch.',
+      'During busy shifts, VitaMed AI keeps documentation from piling up. The summaries are clear, and I can quickly review and sign notes without feeling like I am rewriting everything from scratch.',
   },
   {
-    name: 'Dr. Sofia Alvarez',
-    role: 'Director of Clinical Informatics',
-    hospital: 'Integrated Health System',
-    image:
-      'https://images.unsplash.com/photo-1594824476967-48c8b964273f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmZW1hbGUlMjBkb2N0b3IlMjBwb3J0cmFpdHxlbnwxfHx8fDE3NDA1ODYwMDB8MA&ixlib=rb-4.1.0&q=80&w=1080',
+
+    name: 'Norinne Gilles',
+    role: 'Strategic Operations Support',
+    hospital: 'Foothill Pulmonary Clinic, Pasadena, CA',
+    image: pp,
     quote:
-      'From an implementation standpoint, VitaMed AI is thoughtful about security and integration. Our clinicians adopted it quickly because it actually reduces friction instead of creating more.',
+      'Using the app has made creating patient charts much easier for me. It helps capture and organize information from previous visits so charts come together faster. I spend less time worrying about formatting and more time focusing on accuracy. It has been a really helpful tool during busy days.',
   }
 ]
 
