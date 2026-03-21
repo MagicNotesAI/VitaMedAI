@@ -3,7 +3,7 @@ import { Volume2, VolumeX, Play, X } from "lucide-react";
 import videoFile from "../assets/vidro.mov";
 
 const FORM_URL =
-  "https://wtf-forms.vercel.app/dff6a5a4-b16a-45d0-8ba3-9f3d6deb0af1";
+  "https://wtf-prod-drab.vercel.app/9b50f07e-5d80-4dd0-a9eb-84cf8665257a"; //https://wtf-forms.vercel.app/dff6a5a4-b16a-45d0-8ba3-9f3d6deb0af1
 
 export function VideoSection() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -12,6 +12,7 @@ export function VideoSection() {
   const [muted, setMuted] = useState(true);
   const [isPlaying, setIsPlaying] = useState(false);
   const [showForm, setShowForm] = useState(false);
+  const [iframeKey, setIframeKey] = useState(0);
 
   const pauseVideo = () => {
     const v = videoRef.current;
@@ -34,20 +35,28 @@ export function VideoSection() {
   // Store playVideo ref for use in event listener
   playVideoRef.current = playVideo;
 
+  const handleFormSubmit = () => {
+    setShowForm(false);
+    setTimeout(() => {
+      if (playVideoRef.current) {
+        void playVideoRef.current();
+      }
+    }, 100);
+  };
+
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
-      // Listen for form completion message from the iframe
-      // WTF Forms typically sends a message with type 'form-submit' or similar
+      // Listen for form completion message from WTF Forms
       if (
         event.data &&
-        (event.data.type === "form-submit" ||
+        (event.data.type === "WTF_FORMS_SUBMISSION_COMPLETE" ||
+          event.data.type === "form-submit" ||
           event.data.type === "wtf-form-submit" ||
-          event.data.success === true)
+          event.data.type === "success" ||
+          event.data.success === true ||
+          event.data.completed === true)
       ) {
-        setShowForm(false);
-        if (playVideoRef.current) {
-          void playVideoRef.current();
-        }
+        handleFormSubmit();
       }
     };
 
@@ -66,30 +75,63 @@ export function VideoSection() {
   };
 
   const handlePlayIntent = () => {
+    setIframeKey(0);
     setShowForm(true);
   };
 
   const handleCloseForm = () => {
+    // Close form and play video
     setShowForm(false);
+    setTimeout(() => {
+      if (playVideoRef.current) {
+        void playVideoRef.current();
+      }
+    }, 100);
   };
 
   const handleIframeLoad = () => {
-    // Additional check - try to detect form completion via iframe content
-    // This is a fallback in case postMessage doesn't work
+    // Initial check for submitted=true in URL
+    checkForSubmission();
+  };
+
+  const checkForSubmission = () => {
     const iframe = document.getElementById(
       "video-form-iframe",
     ) as HTMLIFrameElement;
-    if (iframe && iframe.contentWindow) {
-      try {
-        iframe.contentWindow.postMessage(
-          { type: "get-submission-status" },
-          "*",
-        );
-      } catch {
-        // Cross-origin restriction, rely on postMessage from form
+    if (!iframe) return;
+
+    try {
+      const iframeUrl = iframe.contentWindow.location.href;
+      if (
+        iframeUrl.includes("submitted=true") ||
+        iframeUrl.includes("success=true")
+      ) {
+        handleFormSubmit();
+        return;
       }
+    } catch {
+      // Cross-origin - check src instead
+    }
+
+    const iframeSrc = iframe?.src || "";
+    if (
+      iframeSrc.includes("submitted=true") ||
+      iframeSrc.includes("success=true")
+    ) {
+      handleFormSubmit();
     }
   };
+
+  // Poll for form submission when form is shown
+  useEffect(() => {
+    if (!showForm) return;
+
+    const interval = setInterval(() => {
+      checkForSubmission();
+    }, 500);
+
+    return () => clearInterval(interval);
+  }, [showForm]);
 
   return (
     <section className="max-w-7xl mx-auto px-8 py-20">
@@ -126,12 +168,13 @@ export function VideoSection() {
                 <div className="relative w-full h-full">
                   <button
                     type="button"
-                    onClick={handleCloseForm}
+                    onClick={handleFormSubmit}
                     className="absolute top-2 right-2 z-10 bg-gray-100 hover:bg-gray-200 rounded-full p-2 transition-colors"
                   >
                     <X className="w-4 h-4 text-gray-700" />
                   </button>
                   <iframe
+                    key={iframeKey}
                     id="video-form-iframe"
                     src={FORM_URL}
                     className="w-full h-full border-0"
