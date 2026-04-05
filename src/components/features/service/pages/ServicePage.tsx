@@ -1,10 +1,11 @@
 import { motion } from 'motion/react';
 import { ArrowRight, Check, Database, Brain, Shield } from 'lucide-react';
+import { REQUEST_ACCESS_FORM_URL } from '@/constants/urls';
 import { FooterBanner } from '../../../FooterBanner';
 
 export function Service() {
   const handleRequestAccess = () => {
-    window.open('https://wtf-forms.vercel.app/2f119830-7aa0-4f80-b678-8df707b999ba', '_blank');
+    window.open(REQUEST_ACCESS_FORM_URL, '_blank');
   };
 
   return (

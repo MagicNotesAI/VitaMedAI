@@ -1,6 +1,5 @@
 import abstractBg from 'figma:asset/29fe9bf4fe8d7bc645e152c63d7bfc471c8a8cc4.png'
-
-const BETA_FORM_URL = 'https://wtf-forms.vercel.app/2f119830-7aa0-4f80-b678-8df707b999ba'
+import { REQUEST_ACCESS_FORM_URL } from '@/constants/urls'
 
 export function BetaAccessSection() {
   return (
@@ -17,7 +16,7 @@ export function BetaAccessSection() {
             </p>
 
             <a
-              href={BETA_FORM_URL}
+              href={REQUEST_ACCESS_FORM_URL}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors uppercase tracking-wide text-sm w-fit"

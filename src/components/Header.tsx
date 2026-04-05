@@ -1,11 +1,9 @@
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { useState } from 'react'
 import { Link } from 'react-router'
+import { REQUEST_ACCESS_FORM_URL } from '@/constants/urls'
 import logo from '../assets/logo.png'
 import logoText from '../assets/write1.png'
-
-const REQUEST_ACCESS_FORM_URL =
-  'https://wtf-forms.vercel.app/2f119830-7aa0-4f80-b678-8df707b999ba'
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)

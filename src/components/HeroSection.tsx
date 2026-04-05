@@ -1,4 +1,5 @@
 import { ArrowRight, Search } from 'lucide-react'
+import { REQUEST_ACCESS_FORM_URL } from '@/constants/urls'
 
 export function HeroSection() {
   const avatars = [
@@ -6,8 +7,6 @@ export function HeroSection() {
     'https://images.unsplash.com/photo-1674450371215-550d33a2d81e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwcHJvdmlkZXIlMjBoZWFkc2hvdHxlbnwxfHx8fDE3NzA2NzMyMjV8MA&ixlib=rb-4.1.0&q=80&w=1080',
     'https://images.unsplash.com/photo-1758691461884-ff702418afde?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZWRpY2FsJTIwcHJvZmVzc2lvbmFsJTIwcG9ydHJhaXR8ZW58MXx8fHwxNzcwNjY5MjgwfDA&ixlib=rb-4.1.0&q=80&w=1080',
   ]
-
-  const PRIVATE_BETA_FORM_URL ='https://wtf-forms.vercel.app/2f119830-7aa0-4f80-b678-8df707b999ba'
 
   return (
     <section className="max-w-7xl mx-auto px-8 py-20">
@@ -38,7 +37,7 @@ export function HeroSection() {
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 md:gap-4 mb-8 md:mb-12">
             <a
-              href={PRIVATE_BETA_FORM_URL}
+              href={REQUEST_ACCESS_FORM_URL}
               target="_blank"
               rel="noreferrer"
               className="bg-gray-900 text-white px-6 py-3.5 rounded-full text-sm font-semibold hover:bg-gray-800 transition-colors flex items-center justify-center gap-2"

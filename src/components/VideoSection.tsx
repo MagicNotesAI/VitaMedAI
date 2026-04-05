@@ -1,9 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { Volume2, VolumeX, Play, X } from "lucide-react";
+import { REQUEST_ACCESS_FORM_URL } from "@/constants/urls";
 import videoFile from "../assets/vidro.mov";
-
-const FORM_URL =
-  "https://wtf-prod-drab.vercel.app/9b50f07e-5d80-4dd0-a9eb-84cf8665257a"; //https://wtf-forms.vercel.app/dff6a5a4-b16a-45d0-8ba3-9f3d6deb0af1
 
 export function VideoSection() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -176,7 +174,7 @@ export function VideoSection() {
                   <iframe
                     key={iframeKey}
                     id="video-form-iframe"
-                    src={FORM_URL}
+                    src={REQUEST_ACCESS_FORM_URL}
                     className="w-full h-full border-0"
                     allow="clipboard-write"
                     onLoad={handleIframeLoad}
