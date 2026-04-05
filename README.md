@@ -15,45 +15,64 @@ Lucide Icons
 
 Clone the repository and install dependencies.
 
+```bash
 git clone <repository-url>
-
-cd medatech-website
-
+cd VitaMedAI
 npm install
+```
 
 If you encounter dependency conflicts during installation, use:
 
+```bash
 npm install --legacy-peer-deps
+```
 
 ## Development
 
 Start the development server.
 
+```bash
 npm run dev
+```
 
-The site will be available locally at:
-
-http://localhost:5173
-
-Changes will automatically reload during development.
+The site is served locally at **http://localhost:3000** (see `server.port` in `vite.config.ts`). The terminal will show the exact URL if it differs. Changes reload automatically during development.
 
 ## Build
 
-To create the production build:
+Create the production bundle:
 
+```bash
 npm run build
+```
 
-This generates the optimized build inside the `dist` folder.
+Output is written to the **`dist`** folder.
 
-## Deployment
+To preview the production build locally:
 
-### GitHub Pages
+```bash
+npx vite preview
+```
 
-1. Push the repository to GitHub.
-2. Enable GitHub Pages in the repository settings.
-3. Set the deployment branch to the one containing the build output (commonly `gh-pages` or `main` depending on configuration).
+By default, preview runs on **http://localhost:4173** unless configured otherwise.
 
-### Custom Domain (GoDaddy)
+## Deployment (GitHub Pages)
+
+This project uses the **`gh-pages`** package to publish the contents of **`dist`** to the **`gh-pages`** branch.
+
+1. Ensure your Git remote is set (for example `origin` pointing at GitHub).
+2. Deploy:
+
+```bash
+npm run deploy
+```
+
+This runs `predeploy` (build + copy `dist/index.html` to `dist/404.html` for SPA hosting), then pushes **`dist`** to the **`gh-pages`** branch.
+
+3. In the GitHub repository: **Settings** → **Pages** → **Build and deployment** → set **Source** to **Deploy from a branch**, choose branch **`gh-pages`** and folder **`/ (root)`**, then save.
+
+The site is available at **`https://<username>.github.io/<repository>/`** unless a custom domain is configured. The **`homepage`** field in `package.json` is set to **https://vitamedai.com** for reference.
+
+### Custom domain (GoDaddy)
 
 If using a GoDaddy domain:
 
@@ -67,17 +86,10 @@ If using a GoDaddy domain:
 
 3. Add a CNAME record:
 
-Name  
-www
+- **Name:** `www`  
+- **Value:** `<your-github-username>.github.io`
 
-Value  
-your-github-username.github.io
-
-4. In the GitHub repository settings, add your domain under **Custom Domain**.
-
-Example:
-
-vitamedai.com
+4. In the GitHub repository **Pages** settings, add your domain under **Custom domain** (for example `vitamedai.com`). The **`public/CNAME`** file is included in the Vite build for GitHub Pages.
 
 ## Project Structure
 
