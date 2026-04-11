@@ -55,6 +55,10 @@ export function Header() {
               How it works
             </Link>
 
+            <Link to="/office-hours" className="text-gray-700 hover:text-gray-900 text-sm font-medium">
+              Office Hours
+            </Link>
+
             <Link to="/contact" className="text-gray-700 hover:text-gray-900 text-sm font-medium">
               Contact Us
             </Link>
@@ -124,6 +128,14 @@ export function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               How it works
+            </Link>
+
+            <Link
+              to="/office-hours"
+              className="text-gray-700 hover:text-gray-900 text-sm font-medium py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Office Hours
             </Link>
 
             <Link
