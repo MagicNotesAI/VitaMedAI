@@ -7,6 +7,7 @@ import { Service } from '../components/features/service/pages/ServicePage'
 import ContactPage from '../components/features/contact/contact'
 import { PrivacyPolicy } from '../components/features/privacy/pp'
 import { TermsAndConditions } from '../components/features/privacy/term'
+import { OfficeHours } from '../components/features/office-hours/pages/OfficeHoursPage'
 
 export const router = createHashRouter([
   {
@@ -62,6 +63,14 @@ export const router = createHashRouter([
     element: (
       <MainLayout>
         <TermsAndConditions />
+      </MainLayout>
+    ),
+  },
+  {
+    path: '/office-hours',
+    element: (
+      <MainLayout>
+        <OfficeHours />
       </MainLayout>
     ),
   },
