@@ -1,160 +1,150 @@
-import { Stethoscope, Linkedin, Twitter, Facebook, Instagram } from 'lucide-react';
+import { Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import logo from '../assets/logo.jpg'
 
 export function FooterBanner() {
   return (
     <footer className="bg-[#0A0F1E] border-t border-gray-800 relative overflow-hidden">
-      {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-transparent to-blue-900/5 pointer-events-none"></div>
-      
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-transparent to-blue-900/5 pointer-events-none" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-8 py-12 relative z-10">
-        {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-12">
-          {/* Logo and Description */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 bg-blue-500 rounded-lg flex items-center justify-center">
-                <Stethoscope className="w-5 h-5 text-white" />
+            <div className="flex items-center gap-3 mb-4">
+              <img
+                src={logo}
+                alt="Vitamed AI"
+                className="w-10 h-10 rounded-xl object-cover border border-white/10"
+              />
+              <div>
+                <div className="text-white font-bold text-lg leading-tight">Vitamed AI</div>
+                <div className="text-gray-400 text-sm">Intelligence at the point of care</div>
               </div>
-              <span className="text-xl font-bold text-white">MED-A</span>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">
-              Streamlining patient care, improving patient outcomes, and facilitating communication between clinicians and doctors with automation and AI.
+
+            <p className="text-gray-400 text-sm leading-relaxed max-w-md">
+              Introducing Vitamed AI, a medical revolution to streamline patient care, improve patient outcomes,
+              and facilitate communication between patients and doctors using automation and cutting edge AI
+              technology.
             </p>
-            {/* Social Media Icons */}
-            <div className="flex items-center gap-4">
-              <a 
-                href="#" 
-                className="hover:opacity-70 transition-opacity"
+
+            <div className="mt-5 space-y-3">
+              <a
+                href="mailto:hello@vitamed.ai"
+                className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors"
+              >
+                <Mail className="w-4 h-4" />
+                hello@vitamed.ai
+              </a>
+
+              <a
+                href="tel:+10000000000"
+                className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors"
+              >
+                <Phone className="w-4 h-4" />
+                +1 (000) 000 0000
+              </a>
+
+              <div className="flex items-start gap-2 text-sm text-gray-300">
+                <MapPin className="w-4 h-4 mt-0.5" />
+                <span>Amherst, MA</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="text-white font-semibold mb-4">Company</h4>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <Link to="/" className="text-gray-400 hover:text-white transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/service" className="text-gray-400 hover:text-white transition-colors">
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/how-it-works" className="text-gray-400 hover:text-white transition-colors">
+                  How it works
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-gray-400 hover:text-white transition-colors">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-white font-semibold mb-4">Legal</h4>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <Link to="/privacy-policy" className="text-gray-400 hover:text-white transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/terms" className="text-gray-400 hover:text-white transition-colors">
+                  Terms & Conditions
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-white font-semibold mb-4">Follow</h4>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="https://www.linkedin.com/company/vitamed-ai/posts/?feedView=all"
+                target="_blank"
+                rel="noreferrer"
+                className="w-11 h-11 rounded-2xl bg-blue-600 flex items-center justify-center text-white hover:bg-blue-700 transition-colors"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="w-5 h-5 text-gray-400" />
+                <Linkedin className="w-5 h-5" />
               </a>
-              <a 
-                href="#" 
-                className="hover:opacity-70 transition-opacity"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-5 h-5 text-gray-400" />
-              </a>
-              <a 
-                href="#" 
-                className="hover:opacity-70 transition-opacity"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-5 h-5 text-gray-400" />
-              </a>
-              <a 
-                href="#" 
-                className="hover:opacity-70 transition-opacity"
+
+              <a
+                href="#"
+                className="w-11 h-11 rounded-2xl bg-pink-600 flex items-center justify-center text-white hover:bg-pink-700 transition-colors"
                 aria-label="Instagram"
               >
-                <Instagram className="w-5 h-5 text-gray-400" />
+                <Instagram className="w-5 h-5" />
               </a>
             </div>
-          </div>
 
-          {/* Explore Links */}
-          <div>
-            <h3 className="font-semibold text-white mb-4">Explore</h3>
-            <ul className="space-y-3">
-              <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">
-                  Service
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">
-                  How it works
-                </a>
-              </li>
-            </ul>
-          </div>
+            <p className="text-gray-500 text-xs mt-5 leading-relaxed">
+              Follow us for product updates, private beta announcements, and new feature releases.
+            </p>
 
-          {/* Resources Links */}
-          <div>
-            <h3 className="font-semibold text-white mb-4">Resources</h3>
-            <ul className="space-y-3">
-              <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">
-                  Case Studies
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">
-                  Impact Calculator
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">
-                  Best in KLAS
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">
-                  Security
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Company Links */}
-          <div>
-            <h3 className="font-semibold text-white mb-4">Company</h3>
-            <ul className="space-y-3">
-              <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">
-                  Team
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">
-                  Press
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">
-                  Careers
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">
-                  Contact
-                </a>
-              </li>
-            </ul>
+            <Link
+              to="/contact"
+              className="mt-5 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 px-4 py-2 text-sm font-semibold text-gray-200 hover:text-white hover:bg-white/10 transition-colors w-full"
+            >
+              Contact our team
+            </Link>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-gray-800">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-gray-500 text-sm">
-              © 2024 Med-A-Health.com All rights reserved.
-            </p>
-            <div className="flex items-center gap-6">
-              <a href="#" className="text-gray-500 hover:text-blue-400 transition-colors text-sm">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-gray-500 hover:text-blue-400 transition-colors text-sm">
-                Terms of Service
-              </a>
-              <a href="#" className="text-gray-500 hover:text-blue-400 transition-colors text-sm">
-                Cookie Preferences
-              </a>
-            </div>
+        <div className="pt-8 border-t border-gray-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <p className="text-gray-500 text-xs">
+            © {new Date().getFullYear()} Vitamed AI. All rights reserved.
+          </p>
+          <div className="flex items-center gap-4">
+            <Link to="/privacy-policy" className="text-gray-600 text-xs hover:text-gray-400 transition-colors">
+              Privacy Policy
+            </Link>
+            <span className="text-gray-700 text-xs">·</span>
+            <Link to="/terms" className="text-gray-600 text-xs hover:text-gray-400 transition-colors">
+              Terms & Conditions
+            </Link>
           </div>
+          <p className="text-gray-600 text-xs">Built for clinicians and patients with privacy first design.</p>
         </div>
       </div>
     </footer>
-  );
+  )
 }
