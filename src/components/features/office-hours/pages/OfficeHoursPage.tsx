@@ -1,77 +1,8 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Video, MessageCircle, Bug, HelpCircle, Clock, Users, ArrowRight, Calendar, CheckCircle } from 'lucide-react'
-
-const OFFICE_HOURS_ZOOM_URL = 'https://meet.zoho.com/m'
-const CC_EMAILS = ['recruit@magicnotesai.com', 'tinani@seas.upenn.edu']
-
-function getUpcomingWednesdays(count = 8): Date[] {
-  const wednesdays: Date[] = []
-  const today = new Date()
-  today.setHours(0, 0, 0, 0)
-
-  const day = today.getDay() // 0=Sun, 3=Wed
-  let daysUntilWed = (3 - day + 7) % 7
-  if (daysUntilWed === 0) daysUntilWed = 7 // if today is Wednesday, get next one
-
-  const nextWed = new Date(today)
-  nextWed.setDate(today.getDate() + daysUntilWed)
-
-  for (let i = 0; i < count; i++) {
-    const wed = new Date(nextWed)
-    wed.setDate(nextWed.getDate() + i * 7)
-    wednesdays.push(wed)
-  }
-
-  return wednesdays
-}
-
-function buildCalendarUrl(date: Date, email: string): string {
-  const year = date.getFullYear()
-  const month = String(date.getMonth() + 1).padStart(2, '0')
-  const day = String(date.getDate()).padStart(2, '0')
-
-  const startDate = `${year}${month}${day}T113000`
-  const endDate = `${year}${month}${day}T123000`
-  const guests = [email, ...CC_EMAILS].join(',')
-
-  const details = `Join us for VitaMed AI Office Hours!\n\nZoom link: ${OFFICE_HOURS_ZOOM_URL}\n\nBring your questions, share your screen, and get real-time support from the VitaMed AI team.`
-
-  return (
-    `https://calendar.google.com/calendar/render?action=TEMPLATE` +
-    `&text=${encodeURIComponent('VitaMed AI Office Hours')}` +
-    `&dates=${startDate}/${endDate}` +
-    `&details=${encodeURIComponent(details)}` +
-    `&location=${encodeURIComponent(OFFICE_HOURS_ZOOM_URL)}` +
-    `&add=${encodeURIComponent(guests)}` +
-    `&ctz=America%2FNew_York`
-  )
-}
-
-function formatDateDisplay(date: Date): string {
-  return date.toLocaleDateString('en-US', {
-    weekday: 'long',
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric',
-  })
-}
+import { Video, MessageCircle, Bug, HelpCircle, Clock, Users, ArrowRight, Calendar } from 'lucide-react'
+import { OFFICE_HOURS_BOOKING_URL } from '../../../../constants/urls'
 
 export function OfficeHours() {
-  const wednesdays = getUpcomingWednesdays(8)
-  const [selectedIndex, setSelectedIndex] = useState<string>('')
-  const [email, setEmail] = useState('')
-  const [submitted, setSubmitted] = useState(false)
-
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault()
-    if (!selectedIndex || !email) return
-    const date = wednesdays[parseInt(selectedIndex)]
-    const url = buildCalendarUrl(date, email)
-    window.open(url, '_blank')
-    setSubmitted(true)
-  }
-
   return (
     <section className="overflow-hidden bg-[#F7F9FC] py-24">
       <div className="mx-auto max-w-5xl px-8">
@@ -98,65 +29,18 @@ export function OfficeHours() {
           </div>
           <h2 className="mb-3 text-3xl font-bold text-black">Reserve Your Spot</h2>
           <p className="mx-auto mb-8 max-w-lg text-base leading-7 text-gray-500">
-            Pick a Wednesday, enter your email, and we'll add a calendar invite with the session
-            link directly to your Google Calendar.
+            Book in advance through HubSpot so our team knows to expect you.
           </p>
 
-          {submitted ? (
-            <div className="flex flex-col items-center gap-3 py-4">
-              <CheckCircle className="h-10 w-10 text-blue-600" />
-              <p className="text-lg font-semibold text-black">You're registered!</p>
-              <p className="text-sm text-gray-500">
-                Save the event in the Google Calendar tab that just opened — invite emails will go
-                out automatically.
-              </p>
-              <button
-                onClick={() => { setSubmitted(false); setSelectedIndex(''); setEmail('') }}
-                className="mt-2 text-sm text-blue-600 underline underline-offset-2"
-              >
-                Register for another session
-              </button>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="mx-auto flex max-w-md flex-col gap-4">
-              <div className="flex flex-col gap-1 text-left">
-                <label className="text-sm font-medium text-gray-700">Select a Wednesday</label>
-                <select
-                  value={selectedIndex}
-                  onChange={e => setSelectedIndex(e.target.value)}
-                  required
-                  className="rounded-xl border border-black/10 bg-gray-50 px-4 py-3 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                >
-                  <option value="" disabled>Choose a date...</option>
-                  {wednesdays.map((date, i) => (
-                    <option key={i} value={i}>
-                      {formatDateDisplay(date)}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div className="flex flex-col gap-1 text-left">
-                <label className="text-sm font-medium text-gray-700">Your email</label>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={e => setEmail(e.target.value)}
-                  required
-                  placeholder="you@example.com"
-                  className="rounded-xl border border-black/10 bg-gray-50 px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="mb-4 inline-flex items-center justify-center gap-2 rounded-2xl bg-blue-600 px-6 py-3 font-semibold text-white shadow-md transition-colors hover:bg-blue-700"
-              >
-                Add to Google Calendar
-                <ArrowRight className="h-4 w-4" />
-              </button>
-            </form>
-          )}
+          <a
+            href={OFFICE_HOURS_BOOKING_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="mb-4 inline-flex items-center justify-center gap-2 rounded-2xl bg-blue-600 px-6 py-3 font-semibold text-white shadow-md transition-colors hover:bg-blue-700"
+          >
+            Book through HubSpot
+            <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
 
         {/* ── Session Details (3 cards in a row) ───────────── */}
@@ -165,7 +49,7 @@ export function OfficeHours() {
             {
               icon: Clock,
               label: 'Schedule',
-              text: 'Every Wednesday, 11:30 AM – 12:30 PM EST',
+              text: 'Every Friday, 3:30 PM - 4:30 PM ET',
             },
             {
               icon: Users,
