@@ -8,7 +8,7 @@ import norinne from '../../../../assets/norinne.png'
 const teamMembers = [
   {
     name: 'Janu Subramanian PhD',
-    role: 'CEO/CTO',
+    role: 'CTO',
     image: janu,
     linkedin: '#',
     bio:
@@ -16,7 +16,7 @@ const teamMembers = [
   },
   {
     name: 'Leejoe Pallickal',
-    role: 'President, CMO',
+    role: 'President, CEO',
     image: leejoe,
     linkedin: '#',
     bio:
